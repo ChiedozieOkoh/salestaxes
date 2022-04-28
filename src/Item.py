@@ -9,10 +9,11 @@ class Item:
         self.price = price
 
     def shelf_price(self,tax = 10):
-
-        tmp_price =  self.price + (self.price * tax)/100
-        two_dp = round(tmp_price,2)
-        return round_to_multiple(two_dp,0.05)
+        tmp_tax = (self.price * tax)/100
+        tax_two_dp = round(tmp_tax,2)
+        final_tax = round_to_multiple(tax_two_dp,0.05)
+        price =  self.price + (self.price * tax)/100
+        return round(price,2)
     
     def sales_tax(self,tax = 10):
         return round(self.shelf_price(tax) - self.price,2)
