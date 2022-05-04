@@ -1,11 +1,13 @@
 import Item
 
 def main(): 
-    cd = Item.Item("blue",14.99)
-    print("name:  {:s}".format(cd.name))
-    print("base price:  {:0.2f}".format(cd.price))
-    print("shelf price: {:0.2f}".format(cd.shelf_price()))
-    print("tax amount:  {:0.2f}".format(cd.sales_tax()))
+   book = Item.TaxFree("book",12.49)
+   cd = Item.Item("music CD",14.99)
+   bar = Item.TaxFree("chocolate bar",0.85)
+
+   order = [book,cd,bar]
+   Item.print_recipt(order)
+
 
 if __name__ == "__main__": 
     main()
